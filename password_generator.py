@@ -100,7 +100,7 @@ swt_numeros = ctk.CTkSwitch(
 
 swt_pontuacoes = ctk.CTkSwitch(
     frame_switches,
-    text="Pontuações"
+    text="Símbolos"
 )
 
 swt_letras.pack(side="left", padx=10)
