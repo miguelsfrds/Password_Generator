@@ -70,7 +70,7 @@ montanha-aB3$kR9p
 ```bash
 # Clone o repositório
 git clone https://github.com/miguelsfrds/Password_Generator.py.git
-cd gerador-de-senhas
+cd Password_Generator.py
 
 # Instale as dependências
 pip install customtkinter
