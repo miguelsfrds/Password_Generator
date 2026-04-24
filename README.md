@@ -79,7 +79,7 @@ pip install customtkinter
 ### Execução
 
 ```bash
-python Password_Generator.py.py
+python Password_Generator.py
 ```
 
 ---
