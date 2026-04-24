@@ -2,6 +2,7 @@ import secrets
 import string
 import customtkinter as ctk
 import lista_palavras_chave
+import webbrowser
 import os
 
 #---------------------------JANELA-------------------------------------
@@ -10,14 +11,8 @@ app = ctk.CTk()
 app.title("Gerador de Senhas")
 app.geometry("450x300")
 
-try:
-    icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "icon.ico")
-    app.iconbitmap(icon_path)
-except Exception:
-    pass
-
 #FRAME
-frame = ctk.CTkFrame(app, width=390, height=240)
+frame = ctk.CTkFrame(app, width=400, height=260)
 frame.place(relx=0.5, rely=0.5, anchor="center")
 frame.grid_propagate(False)
 
@@ -55,11 +50,14 @@ def gerar_senha():
 
     campo_senha.delete(0, "end")
     campo_senha.insert(0, senha)
+    
+    label_aviso.configure(text="")
 
 def copiar_senha():
     senha = campo_senha.get()
     app.clipboard_clear()
     app.clipboard_append(senha)
+    label_aviso.configure(text="Senha Copiada!", text_color="green")
 
 #------------------------LABEL-TAMANHO--------------------------------
 
@@ -127,6 +125,24 @@ btn_copiar_senha = ctk.CTkButton(
 btn_gerar_senha.pack(side="left", padx=10)
 btn_copiar_senha.pack(side="left", padx=10)
 
-#----------------------------------------------------------------------
+#-----------------------FEEDBACK MENSAGEM COPIADA----------------------
+
+label_aviso = ctk.CTkLabel(frame, text="")
+label_aviso.grid(column=0, columnspan=3)
+
+# ----------------------LINK DO GITHUB---------------------------------
+
+def abrir_github(event=None):
+    webbrowser.open("https://github.com/miguelsfrds")
+
+link_github = ctk.CTkLabel(
+    frame,
+    text="miguelsfrds",
+    font=("Consolas", 15),
+    text_color="white",
+    compound="left"
+)
+link_github.place(relx=1.0, rely=1.0, anchor="se", x=-10, y=-10)
+link_github.bind("<Button-1>", abrir_github)
 
 app.mainloop()
