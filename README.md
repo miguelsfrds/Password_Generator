@@ -102,16 +102,6 @@ O módulo `random` do Python **não é adequado para criptografia** — ele usa 
 
 ---
 
-## 📌 Melhorias Futuras
-
-- [ ] Indicador visual de força da senha
-- [ ] Histórico de senhas geradas na sessão
-- [ ] Opção de exportar senhas para arquivo `.txt`
-- [ ] Tema claro / escuro configurável
-- [ ] Suporte a múltiplos idiomas para palavras-chave
-
----
-
 ## 👨‍💻 Autor
 
 Desenvolvido por **[@miguelsfrds](https://github.com/miguelsfrds)**
